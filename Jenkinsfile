@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+	MAVEN_USER_HOME=/home/jenkins/.m2 	 
+    }
     stages {
         stage('Build') {
             steps {
