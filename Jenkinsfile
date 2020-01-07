@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'cd hello && ./mvnw -B clean package spring-boot:repackage'
+                sh './mvnw -B clean package spring-boot:repackage'
             }
         }
         stage('Test') {
