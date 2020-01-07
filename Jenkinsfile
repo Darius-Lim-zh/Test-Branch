@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'echo deployment unimplemented'
+                nexusPublisher nexusInstanceId: 'Nexus-Oss', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [], mavenCoordinate: [artifactId: 'hello', groupId: 'com.example', packaging: 'jar', version: '0.0.1']]]
             }
         }
     }
